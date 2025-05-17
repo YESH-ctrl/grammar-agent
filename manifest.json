@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Grammar Agent",
+  "version": "1.0",
+  "description": "Auto-answers grammar questions using Gemini API.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://YOUR-WEBSITE.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://YOUR-WEBSITE.com/*"
+  ]
+}
