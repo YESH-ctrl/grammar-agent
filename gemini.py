@@ -49,8 +49,14 @@ def answer():
         time.sleep(wait_time)
     
     try:
+        # Updated prompt specifically for vocabulary questions
+        prompt = f"""Given the vocabulary word: {question}
+        What is the correct definition or synonym for this word?
+        Respond with ONLY the correct answer, no explanations or additional text.
+        The answer should be a single word or short phrase that best matches the meaning of the given word."""
+        
         print("Attempting to generate response...")
-        response = model.generate_content(f"What is the correct answer to this grammar question: {question}? Respond with one word only.")
+        response = model.generate_content(prompt)
         print(f"Generated response: {response.text}")
         last_request_time = time.time()
         return jsonify({"answer": response.text.strip()})

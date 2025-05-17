@@ -12,11 +12,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://YOUR-WEBSITE.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ],
   "host_permissions": [
-    "https://YOUR-WEBSITE.com/*"
+    "https://grammar-agent.onrender.com/*"
   ]
 }
